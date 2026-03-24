@@ -27,6 +27,13 @@ export default function MobileHeader() {
               height={35}
             />
           </Link>
+          <Link 
+          href="mailto:sophiaevans2025@gmail.com"
+          target="_blank"
+          className="transition-transform duration-200 hover:-translate-y-1"
+        >
+          <Image src="/email.png" alt="email" width={35} height={35} />
+        </Link>
         </div>
         <button onClick={() => setMenuOpen(!menuOpen)} className="ml-auto">
           <div className="w-6 h-6 flex flex-col justify-center items-center">
@@ -42,16 +49,16 @@ export default function MobileHeader() {
             <Link href="/" className="py-2 inline-block transition-transform duration-200 hover:-translate-y-1" onClick={() => setMenuOpen(false)}>
               HOME
             </Link>
-            <Link href="/" className="py-2 inline-block transition-transform duration-200 hover:-translate-y-1" onClick={() => setMenuOpen(false)}>
+            <Link href="/about" className="py-2 inline-block transition-transform duration-200 hover:-translate-y-1" onClick={() => setMenuOpen(false)}>
               ABOUT
             </Link>
-            <Link href="/" className="py-2 inline-block transition-transform duration-200 hover:-translate-y-1" onClick={() => setMenuOpen(false)}>
+            <Link href="/portfolio" className="py-2 inline-block transition-transform duration-200 hover:-translate-y-1" onClick={() => setMenuOpen(false)}>
               PORTFOLIO
             </Link>
-            <Link href="/" className="py-2 inline-block transition-transform duration-200 hover:-translate-y-1" onClick={() => setMenuOpen(false)}>
+            <Link href="/experience" className="py-2 inline-block transition-transform duration-200 hover:-translate-y-1" onClick={() => setMenuOpen(false)}>
               EXPERIENCE
             </Link>
-            <Link href="/" className="py-2 inline-block transition-transform duration-200 hover:-translate-y-1" onClick={() => setMenuOpen(false)}>
+            <Link href="/learning" className="py-2 inline-block transition-transform duration-200 hover:-translate-y-1" onClick={() => setMenuOpen(false)}>
               WHAT IM LEARNING RN
             </Link>
             <Link href="/" className="py-2 inline-block transition-transform duration-200 hover:-translate-y-1" onClick={() => setMenuOpen(false)}>

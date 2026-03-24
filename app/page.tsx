@@ -2,10 +2,12 @@ import AnimatedImage from "./components/AnimatedImage";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import MobileHeader from "./components/MobileHeader";
+import TextRotater from "./components/TextRotater";
+
 
 export default function Home() {
   return (
-    <div className="w-full">
+    <div className="w-full overflow-x-hidden">
       <div className="hidden md:block">
         <Header />
       </div>
@@ -33,7 +35,7 @@ export default function Home() {
             />
           </div>
           <div className="w-full flex items-center text-center justify-center mx-3">
-            <h1 className="text-lg">game designer, artist, coder, student...</h1>
+            <TextRotater />
           </div>
         </div>
       </section>
