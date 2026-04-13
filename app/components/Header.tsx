@@ -12,7 +12,6 @@ export default function Header() {
     { href: "/about", label: "ABOUT" },
     { href: "/portfolio", label: "PORTFOLIO" },
     { href: "/experience", label: "EXPERIENCE" },
-    { href: "/learning", label: "WHAT IM LEARNING RN" },
     { href: "https://drive.google.com/file/d/1tKmuxighDR1XeBzOoGoEjEijfcK47ECN/view?usp=sharing", label: "RESUME" },
   ];
 

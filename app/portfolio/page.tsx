@@ -3,6 +3,7 @@
 import Header from "../components/Header";
 import MobileHeader from "../components/MobileHeader";
 import Footer from "../components/Footer";
+import Work from "../components/Work";
 import Link from "next/link";
 import { motion, AnimatePresence, useInView, type Variants } from "motion/react";
 import { useRef, useState, useEffect } from "react";
@@ -14,13 +15,67 @@ interface Section {
   description: string;
 }
 
-const sections: Section[] = [
-  { href: "#games", label: "Games", count: "01", description: "" },
-  { href: "#modelling", label: "Modelling", count: "02", description: "" },
-  { href: "#character-design", label: "Character Design", count: "03", description: "" },
-  { href: "#environments", label: "Environments", count: "04", description: "" },
-  { href: "#2D-art", label: "2D Art", count: "05", description: "" },
-  { href: "#web-dev", label: "Web Dev", count: "06", description: "" },
+interface WorkItem {
+  title: string;
+  description: string;
+  image?: string;
+  link?: string;
+}
+
+interface SectionData {
+  section: Section;
+  items: WorkItem[];
+}
+
+const sections: SectionData[] = [
+  {
+    section: { href: "#games", label: "Games", count: "01", description: "" },
+    items: [
+      { title: "Hackathon Game", description: "Placeholder", image: "", link: "" },
+      { title: "Placeholder", description: "Placeholder", image: "", link: "" },
+      { title: "Placeholder", description: "Placeholder", image: "", link: "" },
+    ],
+  },
+  {
+    section: { href: "#modelling", label: "Modelling", count: "02", description: "" },
+    items: [
+      { title: "Magician Hat", description: "Placeholder", image: "/rabithatimg2.png", link: "" },
+      { title: "Split Milk", description: "Placeholder", image: "/SPLITMILKSTILL1.png", link: "" },
+      { title: "Placeholder", description: "Placeholder", image: "", link: "" },
+    ],
+  },
+  {
+    section: { href: "#character-design", label: "Character Design", count: "03", description: "" },
+    items: [
+      { title: "Sleepy Bud", description: "Placeholder", image: "/flower2.png", link: "https://drive.google.com/file/d/1yM-IrgAM_Hez2A9GPMpsgxABrVM5CL5b/view?usp=sharing" },
+      { title: "Placeholder", description: "Placeholder", image: "", link: "" },
+      { title: "Placeholder", description: "Placeholder", image: "", link: "" },
+    ],
+  },
+  {
+    section: { href: "#3d-graphics", label: "3D Graphics", count: "04", description: "" },
+    items: [
+      { title: "Game Thumbnail 1", description: "Placeholder", image: "/2obbythumbnail1.png", link: "" },
+      { title: "Game Thumbnail 2", description: "Placeholder", image: "/TruckChaos.png", link: "" },
+      { title: "Placeholder", description: "Placeholder", image: "", link: "" },
+    ],
+  },
+  {
+    section: { href: "#2D-art", label: "2D Art", count: "06", description: "" },
+    items: [
+      { title: "Hackathon Game Assets", description: "Placeholder", image: "", link: "" },
+      { title: "AP Art Portfolio", description: "Placeholder", image: "/IMG_5034.JPG", link: "https://drive.google.com/file/d/1mcr21iO-xG6AB4PFq8t_UzKNpLdw6693/view?usp=sharing" },
+      { title: "Placeholder", description: "Placeholder", image: "", link: "" },
+    ],
+  },
+  {
+    section: { href: "#web-dev", label: "Web Dev", count: "07", description: "" },
+    items: [
+      { title: "InteliEQ", description: "Placeholder", image: "/intelieq.png", link: "https://intelieq.life/" },
+      { title: "GeoTrainr", description: "Placehodler", image: "/geotrainr.png", link: "https://geotrainr.vercel.app/" },
+      { title: "Scrapsy", description: "Placeholder", image: "/scrapsy.png", link: "https://scrapsy.vercel.app/" },
+    ],
+  },
 ];
 
 const fadeUp: Variants = {
@@ -42,7 +97,6 @@ const navItemVariant: Variants = {
   show: { opacity: 1, x: 0 },
 };
 
-/* ─── MODAL (ADDED) ───────────────────────────── */
 function ProjectModal({ item, onClose }: { item: any; onClose: () => void }) {
   useEffect(() => {
     const handleEsc = (e: KeyboardEvent) => e.key === "Escape" && onClose();
@@ -66,8 +120,18 @@ function ProjectModal({ item, onClose }: { item: any; onClose: () => void }) {
             animate={{ scale: 1, opacity: 1, y: 0 }}
             exit={{ scale: 0.95, opacity: 0 }}
             transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-            className="bg-white w-[90%] max-w-xl p-8 rounded shadow-xl"
+            className="bg-white w-[90%] max-w-4xl p-8 rounded shadow-xl max-h-[90vh] overflow-y-auto"
           >
+            {item?.image && (
+              <div className="mb-6 rounded overflow-hidden">
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  className="w-full h-auto max-h-96 object-contain"
+                />
+              </div>
+            )}
+
             <h2 className="font-[EdoSZ] text-3xl mb-4 text-[#323232]">
               {item?.title}
             </h2>
@@ -76,12 +140,24 @@ function ProjectModal({ item, onClose }: { item: any; onClose: () => void }) {
               {item?.description}
             </p>
 
-            <button
-              onClick={onClose}
-              className="mt-4 px-5 py-2 border border-black text-sm font-[Poppins] uppercase tracking-wider hover:bg-black hover:text-white transition"
-            >
-              Close
-            </button>
+            <div className="flex gap-3">
+              {item?.link && (
+                <a
+                  href={item.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-5 py-2 bg-black text-white text-sm font-[Poppins] uppercase tracking-wider hover:bg-gray-800 transition"
+                >
+                  See More →
+                </a>
+              )}
+              <button
+                onClick={onClose}
+                className="px-5 py-2 border border-black text-sm font-[Poppins] uppercase tracking-wider hover:bg-black hover:text-white transition"
+              >
+                Close
+              </button>
+            </div>
           </motion.div>
         </motion.div>
       )}
@@ -89,7 +165,6 @@ function ProjectModal({ item, onClose }: { item: any; onClose: () => void }) {
   );
 }
 
-/* ─── NAV ───────────────────────────── */
 function NavLink({ section }: { section: Section }) {
   const [hovered, setHovered] = useState(false);
 
@@ -132,12 +207,13 @@ function NavLink({ section }: { section: Section }) {
   );
 }
 
-/* ─── SECTION ───────────────────────────── */
 function SectionBlock({
   section,
+  items,
   openModal,
 }: {
   section: Section;
+  items: WorkItem[];
   openModal: (item: any) => void;
 }) {
   const ref = useRef<HTMLDivElement>(null);
@@ -164,33 +240,20 @@ function SectionBlock({
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-        {[0, 1, 2].map((i) => {
-          const project = {
-            title: `${section.label} ${i + 1}`,
-            description: "Add your real project details here.",
-          };
-
-          return (
-            <motion.div
-              key={i}
-              onClick={() => openModal(project)}
-              initial={{ opacity: 0, y: 16 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              whileHover={{ y: -4 }}
-              className="aspect-[4/3] bg-gray-100 border border-stone-200 rounded flex items-center justify-center cursor-pointer"
-            >
-              <span className="text-[10px] text-gray-400 font-[Poppins] uppercase tracking-widest">
-                Coming Soon
-              </span>
-            </motion.div>
-          );
-        })}
+        {items.map((item, index) => (
+          <Work
+            key={`${section.href}-${index}`}
+            title={item.title}
+            image={item.image}
+            link={item.link}
+            onClick={() => openModal(item)}
+          />
+        ))}
       </div>
     </motion.section>
   );
 }
 
-/* ─── PAGE ───────────────────────────── */
 export default function Portfolio() {
   const [selectedProject, setSelectedProject] = useState<any>(null);
 
@@ -203,9 +266,8 @@ export default function Portfolio() {
 
         <motion.div variants={fadeUp} initial="hidden" animate="show" className="py-16">
           <h1 className="text-[clamp(3rem,7vw,5.5rem)] font-[EdoSZ] text-black leading-none mt-3">
-            Selected
-            <br />
-            <span className="text-black">Work.</span>
+            Selected Work.
+           
           </h1>
         </motion.div>
 
@@ -218,7 +280,7 @@ export default function Portfolio() {
             className="w-full lg:w-[55%]"
           >
             {sections.map((s) => (
-              <NavLink key={s.href} section={s} />
+              <NavLink key={s.section.href} section={s.section} />
             ))}
           </motion.div>
 
@@ -233,8 +295,9 @@ export default function Portfolio() {
         <div className="pb-20">
           {sections.map((s) => (
             <SectionBlock
-              key={s.href}
-              section={s}
+              key={s.section.href}
+              section={s.section}
+              items={s.items}
               openModal={setSelectedProject}
             />
           ))}

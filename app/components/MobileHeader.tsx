@@ -58,9 +58,6 @@ export default function MobileHeader() {
             <Link href="/experience" className="py-2 inline-block transition-transform duration-200 hover:-translate-y-1" onClick={() => setMenuOpen(false)}>
               EXPERIENCE
             </Link>
-            <Link href="/learning" className="py-2 inline-block transition-transform duration-200 hover:-translate-y-1" onClick={() => setMenuOpen(false)}>
-              WHAT IM LEARNING RN
-            </Link>
             <Link href="/" className="py-2 inline-block transition-transform duration-200 hover:-translate-y-1" onClick={() => setMenuOpen(false)}>
               RESUME
             </Link>
