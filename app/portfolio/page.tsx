@@ -12,6 +12,7 @@ interface Section {
   href: string;
   label: string;
   count: string;
+  description?: string;
 }
 
 interface WorkItem {
@@ -143,9 +144,9 @@ function ProjectModal({ item, onClose }: { item: any; onClose: () => void }) {
               <div className="mb-6">
                 <p className="text-xs uppercase tracking-widest text-gray-500 font-[Poppins] mb-3">Tech Stack</p>
                 <div className="flex flex-wrap gap-2">
-                  {item.techStack.map((tech) => (
+                  {item.techStack.map((tech: string, index: number) => (
                     <span
-                      key={tech}
+                      key={`${tech}-${index}`}
                       className="inline-block px-3 py-1 text-xs font-[Poppins] text-white bg-[#323232] rounded-full"
                     >
                       {tech}
