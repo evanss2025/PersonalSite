@@ -12,7 +12,6 @@ interface Section {
   href: string;
   label: string;
   count: string;
-  description: string;
 }
 
 interface WorkItem {
@@ -20,6 +19,8 @@ interface WorkItem {
   description: string;
   image?: string;
   link?: string;
+  github?: string;
+  techStack?: string[];
 }
 
 interface SectionData {
@@ -29,51 +30,49 @@ interface SectionData {
 
 const sections: SectionData[] = [
   {
-    section: { href: "#games", label: "Games", count: "01", description: "" },
+    section: { href: "#games", label: "Games", count: "01"},
     items: [
-      { title: "Hackathon Game", description: "Placeholder", image: "", link: "" },
-      { title: "Placeholder", description: "Placeholder", image: "", link: "" },
-      { title: "Placeholder", description: "Placeholder", image: "", link: "" },
+      { title: "Hackathon Game", description: "This game was for a hackathon where we had to build a project that used no text. Help save the marine creatures' island by defeating the incoming tentacles by drawing the matching symbols. You can play single player or multiplayer. My role was the art assets, which helped me practice 2D backgrounds and sprites.", image: "/thumb.png", link: "https://dfhp0a0o74.onrender.com/", github: "https://github.com/giragon6/-------", techStack: ["JavaScript", "HTML", "CSS", "Q Stoke Recognizer"] },
+      { title: "Ophelia Boarding School", description: "Open world roleplay Roblox game. Ammased 36.4K+ visits. I mainly focused on environment building to establish a believable world so players feel immersed.", image: "/ophelia.png", link: "https://www.roblox.com/games/6539934823/Ophelia-Boarding-School#!/about", techStack: ["Roblox Studio", "Lua", "Blender"] },
     ],
   },
   {
-    section: { href: "#modelling", label: "Modelling", count: "02", description: "" },
+    section: { href: "#modelling", label: "Modelling", count: "02"},
     items: [
-      { title: "Magician Hat", description: "Placeholder", image: "/rabithatimg2.png", link: "" },
-      { title: "Split Milk", description: "Placeholder", image: "/SPLITMILKSTILL1.png", link: "" },
-      { title: "Placeholder", description: "Placeholder", image: "", link: "" },
+      { title: "Magician Hat", description: "Created to practice image textures and model composition. Designed low poly for game engine use.", image: "/rabithatimg2.png", techStack: ["Blender", "3D Modelling"] },
+      { title: "Spilt Milk", description: "Created to practice taking a 2D sketch and recreating it as a 3D model. Additionally, practising Blender animation using keyframes that represent a character's personality.", image: "/SPLITMILKSTILL1.png", link: "https://drive.google.com/file/d/19ycB3psI-j8ZTpI2eVhRdRvdcehSnKS_/view?usp=sharing", techStack: ["Blender", "3D Modelling", "3D Animation"] },
+      { title: "Star Clips", description: "Created to practice accessories for characters in a game engine, so also practising low poly models.", image: "/starclipsss.png", techStack: ["Blender", "3D Modelling"] },
     ],
   },
   {
-    section: { href: "#character-design", label: "Character Design", count: "03", description: "" },
+    section: { href: "#character-design", label: "Character Design", count: "03"},
     items: [
-      { title: "Sleepy Bud", description: "Placeholder", image: "/flower2.png", link: "https://drive.google.com/file/d/1yM-IrgAM_Hez2A9GPMpsgxABrVM5CL5b/view?usp=sharing" },
-      { title: "Placeholder", description: "Placeholder", image: "", link: "" },
-      { title: "Placeholder", description: "Placeholder", image: "", link: "" },
+      { title: "Sleepy Bud", description: "Designed to pratice designing a character around a shape (triangle in this case), and then exploring multiple iterations to find the best features that express the charcter the best through design.", image: "/flower2.png", link: "https://drive.google.com/file/d/1yM-IrgAM_Hez2A9GPMpsgxABrVM5CL5b/view?usp=sharing", techStack: ["Digital Art", "Character Design", "Wacom Tablet"] },
+      { title: "Sapling", description: "Designed for a game concept about a tree growing through seasons. I practised texturing, rigging and posing the model.", image: "/sapling1.png", techStack: ["Blender", "3D Modelling", "Rigging"] },
     ],
   },
   {
-    section: { href: "#3d-graphics", label: "3D Graphics", count: "04", description: "" },
+    section: { href: "#3d-graphics", label: "3D Graphics", count: "04"},
     items: [
-      { title: "Game Thumbnail 1", description: "Placeholder", image: "/2obbythumbnail1.png", link: "" },
-      { title: "Game Thumbnail 2", description: "Placeholder", image: "/TruckChaos.png", link: "" },
-      { title: "Placeholder", description: "Placeholder", image: "", link: "" },
+      { title: "Game Thumbnail 1", description: "Created for a client developing a Roblox game. Practised specific style that the client wanted and going through multiple iterations for the client.", image: "/2obbythumbnail1.png", techStack: ["Blender", "Rendering", "Posing", "Image Editing"] },
+      { title: "Game Thumbnail 2", description: "Created for a client devloping a Roblox game. Practised recreating client sketches and imagees. Also, focusing on photo editing to add special effects.", image: "/TruckChaos.png", techStack: ["Blender", "Game Art", "Image Editing"] },
+      { title: "Starry Night", description: "A screenshot from a 3D website I created that was an immersion of the Starry Night painting. I modelled all 3D objects, and composed the scene and environment to mimic the painting.", image: "/starry.png", techStack: ["Blender", "Environment Design", "3D Modelling"] },
     ],
   },
   {
-    section: { href: "#2D-art", label: "2D Art", count: "06", description: "" },
+    section: { href: "#2D-art", label: "2D Art", count: "05"},
     items: [
-      { title: "Hackathon Game Assets", description: "Placeholder", image: "", link: "" },
-      { title: "AP Art Portfolio", description: "Placeholder", image: "/IMG_5034.JPG", link: "https://drive.google.com/file/d/1mcr21iO-xG6AB4PFq8t_UzKNpLdw6693/view?usp=sharing" },
-      { title: "Placeholder", description: "Placeholder", image: "", link: "" },
+      { title: "Hackathon Game Assets", description: "Different background and sprite assets for the hackathon game mentioned above.", image: "/sprite4.png", link: "https://drive.google.com/file/d/1nVc4yIW7BB3psiwy2QjQHqa4QHPMRNL0/view?usp=sharing", techStack: ["Digital Art", "Sprite Design", "Background Design"] },
+      { title: "AP Art Portfolio", description: "AP 2D Art portfolio from high school, my theme focused on how a red string can represent the possessions, relationships, and events that shape identity through time.", image: "/IMG_5034.JPG", link: "https://drive.google.com/file/d/1mcr21iO-xG6AB4PFq8t_UzKNpLdw6693/view?usp=sharing", techStack: ["Mixed Media", "Illustration", "Painting", "Drawing"] },
+      { title: "Sketches", description: "Some rough character sketches for a future game idea I have.", image: "/sktech2.png", link: "https://drive.google.com/file/d/1CPBYHoxiXd5CkYap1Yv07002KeCkGQ-Z/view?usp=sharing", techStack: ["Drawing", "Concept Art"] },
     ],
   },
   {
-    section: { href: "#web-dev", label: "Web Dev", count: "07", description: "" },
+    section: { href: "#web-dev", label: "Web Dev", count: "06"},
     items: [
-      { title: "InteliEQ", description: "Placeholder", image: "/intelieq.png", link: "https://intelieq.life/" },
-      { title: "GeoTrainr", description: "Placehodler", image: "/geotrainr.png", link: "https://geotrainr.vercel.app/" },
-      { title: "Scrapsy", description: "Placeholder", image: "/scrapsy.png", link: "https://scrapsy.vercel.app/" },
+      { title: "InteliEQ", description: "Website created for a startup that focuses on air quality solutions. My role was to help develop designs and build out the home page to provide the best experience for users.", image: "/intelieq.png", link: "https://intelieq.life/", github: "https://github.com/cyweng03/InteliEQ", techStack: ["React", "Next.js", "Tailwind CSS", "Typescript", "Design"] },
+      { title: "GeoTrainr", description: "Website that based on an inputted country and road object, goes through geosphere images and uses a custom trained computer vision model to retrievd the ones with that certain road object. The latitudes and longitudes of the locations in the images is taken and compiled into a playable Geoguessr mapped. This can be used to practice identifying certain road objects unique to certain countries. Recent 3D party API changes means the website does not work as intended for right now!", image: "/geotrainr.png", link: "https://geotrainr.vercel.app/", github: "https://github.com/evanss2025/GeoTrainr", techStack: ["Machine Learning", "Computer Vision", "Flask", "Python", "Next.js", "TypeScript", "Tailwind CSS"] },
+      { title: "Scrapsy", description: "Website that allows users to create and download cute scrapbook pages. Features multiple stickers and different elements to add, and also allows users to upload their own images", image: "/scrapsy.png", link: "https://scrapsy.vercel.app/", github: "https://github.com/evanss2025/Scrapsy", techStack: ["Next.js", "Typescript", "Fabric.js"] },
     ],
   },
 ];
@@ -140,7 +139,23 @@ function ProjectModal({ item, onClose }: { item: any; onClose: () => void }) {
               {item?.description}
             </p>
 
-            <div className="flex gap-3">
+            {item?.techStack && item.techStack.length > 0 && (
+              <div className="mb-6">
+                <p className="text-xs uppercase tracking-widest text-gray-500 font-[Poppins] mb-3">Tech Stack</p>
+                <div className="flex flex-wrap gap-2">
+                  {item.techStack.map((tech) => (
+                    <span
+                      key={tech}
+                      className="inline-block px-3 py-1 text-xs font-[Poppins] text-white bg-[#323232] rounded-full"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            <div className="flex flex-wrap gap-3">
               {item?.link && (
                 <a
                   href={item.link}
@@ -149,6 +164,16 @@ function ProjectModal({ item, onClose }: { item: any; onClose: () => void }) {
                   className="px-5 py-2 bg-black text-white text-sm font-[Poppins] uppercase tracking-wider hover:bg-gray-800 transition"
                 >
                   See More →
+                </a>
+              )}
+              {item?.github && (
+                <a
+                  href={item.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-5 py-2 border border-black text-black text-sm font-[Poppins] uppercase tracking-wider hover:bg-black hover:text-white transition"
+                >
+                  GitHub
                 </a>
               )}
               <button
