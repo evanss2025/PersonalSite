@@ -42,7 +42,7 @@ const sections: SectionData[] = [
     items: [
       { title: "Magician Hat", description: "Created to practice image textures and model composition. Designed low poly for game engine use.", image: "/rabithatimg2.png", techStack: ["Blender", "3D Modelling"] },
       { title: "Spilt Milk", description: "Created to practice taking a 2D sketch and recreating it as a 3D model. Additionally, practising Blender animation using keyframes that represent a character's personality.", image: "/SPLITMILKSTILL1.png", link: "https://drive.google.com/file/d/19ycB3psI-j8ZTpI2eVhRdRvdcehSnKS_/view?usp=sharing", techStack: ["Blender", "3D Modelling", "3D Animation"] },
-      { title: "Star Clips", description: "Created to practice accessories for characters in a game engine, so also practising low poly models.", image: "/starclipsss.png", techStack: ["Blender", "3D Modelling"] },
+      { title: "Woman Model", description: "Created to study human anatomy and to practice 3D modelling on Blender and face topology.", image: "/angle1.png", techStack: ["Blender", "3D Modelling"], link:"https://drive.google.com/file/d/1JgnCWGU5S2mG2-FeaD10or23X7XTh4T3/view?usp=sharing" },
     ],
   },
   {
@@ -65,7 +65,7 @@ const sections: SectionData[] = [
     items: [
       { title: "Hackathon Game Assets", description: "Different background and sprite assets for the hackathon game mentioned above.", image: "/sprite4.png", link: "https://drive.google.com/file/d/1nVc4yIW7BB3psiwy2QjQHqa4QHPMRNL0/view?usp=sharing", techStack: ["Digital Art", "Sprite Design", "Background Design"] },
       { title: "AP Art Portfolio", description: "AP 2D Art portfolio from high school, my theme focused on how a red string can represent the possessions, relationships, and events that shape identity through time.", image: "/IMG_5034.JPG", link: "https://drive.google.com/file/d/1mcr21iO-xG6AB4PFq8t_UzKNpLdw6693/view?usp=sharing", techStack: ["Mixed Media", "Illustration", "Painting", "Drawing"] },
-      { title: "Sketches", description: "Some rough character sketches for a future game idea I have.", image: "/sktech2.png", link: "https://drive.google.com/file/d/1CPBYHoxiXd5CkYap1Yv07002KeCkGQ-Z/view?usp=sharing", techStack: ["Drawing", "Concept Art"] },
+      { title: "Pixel Sprites", description: "Created for a Cornell DGA onboarding. I practised pixel art, walk cycles, and character design.", image: "/lanternfly.png", link: "https://drive.google.com/file/d/1lwoSfDKCKsoJvl3Tn0UEhUQjPJgeVVef/view?usp=sharing", techStack: ["Pixel Art", "Character Design"] },
     ],
   },
   {
