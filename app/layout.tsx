@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
+// @ts-ignore TypeScript may not resolve side-effect CSS imports.
 import "./globals.css";
 
 const poppins = Poppins({
@@ -8,8 +9,8 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Sophia Evans - Personal Website",
-  description: "Sophia Evans - Personal Website",
+  title: "Sophia Evans - Portfolio",
+  description: "Sophia Evans - Portfolio",
 };
 
 export default function RootLayout({
